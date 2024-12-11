@@ -20,17 +20,23 @@ while True:
         amber_led.value(0)
         green_led.value(1)
         
+        buzzer.duty_u16(0)
+        
         print("Light Level Low, Green LED Illuminated")
     elif 30 < photo_val <= 60:
         red_led.value(0)
         amber_led.value(1)
         green_led.value(1)
         
+        buzzer.duty_u16(0)
+        
         print("Light Level Medium, Green and Amber LED Illuminated")
     elif 60 < photo_val <= 100:
         red_led.value(1)
         amber_led.value(1)
         green_led.value(1)
+        
+        buzzer.duty_u16(300)
         
         print("Light Level High, Green, Amber and Red LED Illuminated")
  
